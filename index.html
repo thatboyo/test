@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
-  <link href="css-bootstrap.min.css" rel="stylesheet">
-  <!-- If css-bootstrap.css is different, keep both; otherwise remove duplicate -->
-  <link href="css-styles.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
 
   <link rel="icon" type="image/gif" href="../../icon.gif">
 
@@ -19,16 +18,14 @@
   <meta property="og:description" content="Trying to implement similar building / physics as Besiege - Uploaded by Jules1">
   <meta property="og:image" content="https://www.cheesegames.net/games/468/a.PNG">
 
-  <!-- jQuery (must load before any script that uses $) -->
-  <script src="1.11.3-jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.3.min.js"></script>
 
-  <!-- Bootstrap JS (only load one of the min or non-min versions) -->
-  <script src="js-bootstrap.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.min.js"></script>
 
   <!-- Other site JS -->
-  <script src="js-viewcount.js"></script>
-
-  <!-- Unity loader script is referenced later because it may depend on DOM elements -->
+  <script src="js/viewcount.js"></script>
 </head>
 <body>
   <div id="fb-root"></div>
@@ -62,7 +59,7 @@
 
   <!-- NAVBAR -->
   <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbarcontainer">
+    <div class="container">
       <div class="navbar-header">
         <a href="cheesegames.html" class="navbar-brand">CheeseGames<span style="font-size:15px;">.net</span></a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse" aria-expanded="false" aria-controls="navHeaderCollapse">
@@ -71,7 +68,7 @@
       </div>
       <div class="collapse navbar-collapse navHeaderCollapse">
         <ul class="nav navbar-nav">
-          <li><a href="..html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+          <li><a href="../index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
           <li>
             <div class="searchbarcontainer">
               <form class="navbar-form" id="search" action="../../index.php" method="get" role="search">
@@ -98,11 +95,18 @@
 
   <div class="container">
     <div class="col-xs-10 col-md-push-1" style="position: relative; margin-top: 0; line-height: 140%;">
-      <div class="twitterbutton" style="float:right;">           
-                                                           <!---  hastags arent allowed so i had to encode it ---> 
-        <a data-size="large" class="twitter-share-button" href="https://twitter-share-button%22+href%3D%22https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Ftext%3D%23madewithunity%2520%23cheesegames.net%2520Check%2520out%2520this%2520game%21">Tweet</a>
+      <div class="twitterbutton" style="float:right;">
+        <a 
+          href="https://twitter.com/intent/tweet?text=%23madewithunity%20%23cheesegamesnet%20Check%20out%20this%20game!" 
+          class="twitter-share-button" 
+          data-size="large" 
+          target="_blank" 
+          rel="noopener"
+        >
+          Tweet
+        </a>
       </div>
-                                                      
+
       <div class="fb-share-button" data-href="https://www.cheesegames.net/games/468/index.php?gameDataId=468" data-layout="button_count" data-mobile-iframe="true" data-size="large" style="float:right; margin-right:5px;"></div>
 
       <p style="font-size:30px; width:100%; margin-left:5px; margin-top:10px;"><b>Besiege Clone - Testing</b></p>
@@ -116,9 +120,9 @@
 
       <p style="float:right; font-size:20px; margin-right:10px;">549 <span class="glyphicon glyphicon-eye-open"></span> | </p>
 
-      <a target="_blank" rel="noopener" href="userportfolio.html">
-        <p style="font-size:20px; float:left; width:70%; margin-left:5px;"><b>Jules1</b></p>
-      </a>
+      <p style="font-size:20px; float:left; width:70%; margin-left:5px;">
+        <a target="_blank" rel="noopener" href="userportfolio.html"><b>Jules1</b></a>
+      </p>
     </div>
   </div>
 
@@ -131,7 +135,8 @@
         <br>
         <div class="logo"></div>
         <div class="fullscreen">
-          <img src="images/TemplateData-fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);">
+          <!-- Note: SetFullscreen function is not defined anywhere -->
+          <img src="images/TemplateData-fullscreen.png" width="38" height="38" alt="Fullscreen Button" title="Fullscreen" onclick="SetFullscreen(1);">
         </div>
         <div class="title">Besiege Clone</div>
       </div>
@@ -145,7 +150,7 @@
         compatibilitycheck: null,
         dataUrl: "Release/Build.data",
         codeUrl: "Release/Build.js",
-        memUrl: "Release/Build.mem"
+        memUrl: "Release/Build.mem" // Consider upgrading to Unity WebAssembly (.wasm)
       };
     </script>
 
@@ -166,4 +171,3 @@
   </script>
 </body>
 </html>
-
